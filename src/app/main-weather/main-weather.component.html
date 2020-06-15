@@ -1,0 +1,30 @@
+<div
+*ngIf="WeatherData"
+>
+  <div class="city agileits-w3layouts agileits w3layouts">
+    <p>Ukraine, {{ city }}</p>
+    <app-cities (enterCity)="findCity($event)"></app-cities>
+  </div>
+  
+  <div class="dmy agileits w3-agile w3layouts">
+  </div>
+  
+  <div id="txt"></div>
+  
+  <div class="w3temperatureaits agileits w3-agileits">
+    <div class="w3temperatureaits-grid w3-agileits wthreetemp">
+      <p>{{ WeatherData.temp_celcius }}° C</p>
+    </div>
+    <div class="w3temperatureaits-grid w3tempimg">
+      <i style="color: white; font-size: 40px;" class="fa fa-sun-o" aria-hidden="true"></i>
+    </div>
+    <div class="w3temperatureaits-grid w3-agile wthreestats">
+      <ul>
+        <li class="agiletemp agiletemppressure">{{ WeatherData.main.pressure }} mm Hg</li>
+        <li class="agiletemp wthree agiletemphumidity w3-agile"> {{ WeatherData.main.humidity }}% Humidity</li>
+        <li class="agiletemp agileits-w3layouts agileinfo agiletempwind">{{WeatherData.wind.speed}}m/s {{CompassPoint}}</li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
